@@ -3,15 +3,11 @@
 [![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
 [![support level: community](https://img.shields.io/badge/support%20level-community-lightgray.png)](http://rosindustrial.org/news/2016/10/7/better-supporting-a-growing-ros-industrial-software-platform)
 
-# *overview*
+# *Fork Note*
 
-[Doosan ROS Video](https://www.youtube.com/watch?v=mE24X5PhZ4M&feature=youtu.be)   
-<img src="https://user-images.githubusercontent.com/47092672/113229859-c1f86100-92d2-11eb-8242-3aa7e7f7ef88.png" width="50%">  
-[Doosan ROS Online Lecture(Kor)](https://www.youtube.com/watch?v=TpvBziOb--A)   
-[Doosan ROS Online Lecture(Eng)](https://www.youtube.com/watch?v=KkzoS5VORPc) 
+This repo was forked from the doosan repo on 5/10/24, in order to enable integration of the Doosan H2017 and Vention Prismatic Column Lift. The ROS source directory should also contain the dootion_common package, as outlined below.
 
-
-# *install*
+# *Install*
 
 #### virtual mode
 To utilize the new emulator in virtual mode, Docker is required . Please ensure Docker is installed beforehand if virtual mode is required.
@@ -20,7 +16,7 @@ To utilize the new emulator in virtual mode, Docker is required . Please ensure 
     sudo apt-get install ros-noetic-rqt* ros-noetic-moveit* ros-noetic-gazebo-ros-control ros-noetic-joint-state-controller ros-noetic-effort-controllers ros-noetic-position-controllers ros-noetic-ros-controllers ros-noetic-ros-control ros-noetic-joint-state-publisher-gui ros-noetic-joint-state-publisher
 
 
-# *build* 
+# *Build* 
 ##### *Doosan Robot ROS Package is implemented at ROS-Noetic.*
     ### We recommand the /home/<user_home>/catkin_ws/src
     cd ~/catkin_ws/src
@@ -33,6 +29,9 @@ To utilize the new emulator in virtual mode, Docker is required . Please ensure 
     ### Noetic distro does not support serial package, so you have to install it manually.
     cd ~/catkin_ws/src
     git clone https://github.com/wjwwood/serial.git
+
+    ##### Further ROS / Moveit setup
+    git clone https://github.com/JaredRosenbaum/dootion_common.git
     
     cd ~/catkin_ws
     catkin_make
