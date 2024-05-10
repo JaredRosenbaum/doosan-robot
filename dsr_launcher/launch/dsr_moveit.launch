@@ -19,6 +19,7 @@
 
     <!-- dsr controller 로드  -->
     <rosparam file="$(find dsr_control)/config/dsr_control.yaml" command="load" ns="$(arg ns)$(arg model)"/>
+    <rosparam file="$(find dsr_control)/config/dsr_control_vention.yaml" command="load" ns="$(arg ns)$(arg model)"/>
     <!-- trajectory controller, joint_state 실행  -->
     <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
           output="screen" ns="$(arg ns)$(arg model)" args="dsr_joint_publisher"/>
