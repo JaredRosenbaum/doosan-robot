@@ -18,8 +18,8 @@
 	</group>
 
     <!-- dsr controller 로드  -->
-    <rosparam file="$(find dsr_control)/config/dsr_control.yaml" command="load" ns="$(arg ns)$(arg model)"/>
-    <rosparam file="$(find dsr_control)/config/dsr_control_vention.yaml" command="load" ns="$(arg ns)$(arg model)"/>
+<!--    <rosparam file="$(find dsr_control)/config/dsr_control.yaml" command="load" ns="$(arg ns)$(arg model)"/>
+    <rosparam file="$(find dsr_control)/config/dsr_control_vention.yaml" command="load" ns="$(arg ns)$(arg model)"/>-->
     <!-- trajectory controller, joint_state 실행  -->
     <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
           output="screen" ns="$(arg ns)$(arg model)" args="dsr_joint_publisher"/>
@@ -43,7 +43,7 @@
     <!-- model에 따른 moveit 실행 -->
     <group if="$(eval arg('model') == 'dootion')">
         <include file="$(find dootion_moveit_config)/launch/demo.launch" ns="$(arg ns)$(arg model)">
-            <arg name="moveit_controller_manager" value="simple"/>
+            <arg name="moveit_controller_manager" value="dootion"/>
         </include>
     </group>
     <group if="$(eval arg('model') == 'm0609')">
