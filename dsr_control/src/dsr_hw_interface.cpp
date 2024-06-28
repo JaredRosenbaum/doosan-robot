@@ -27,7 +27,7 @@ int g_nAnalogOutputModeCh2;
 
 
 #define STABLE_BAND_JNT     0.05
-#define DSR_CTL_PUB_RATE    10  //[hz] 10ms <----- 퍼블리싱 주기, but OnMonitoringDataCB() 은 100ms 마다 불려짐을 유의!
+#define DSR_CTL_PUB_RATE    100  //[hz] 10ms <----- 퍼블리싱 주기, but OnMonitoringDataCB() 은 100ms 마다 불려짐을 유의!
 
 namespace dsr_control{
 
